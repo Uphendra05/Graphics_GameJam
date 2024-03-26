@@ -69,3 +69,26 @@ void DrawTransformVector3ImGui(std::string label, glm::vec3& values, float reset
 
 	ImGui::PopID();
 }
+
+bool DrawBool(std::string label, bool& value)
+{
+	bool updated = false;
+
+	ImGui::PushID(label.c_str());
+
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 150);
+	ImGui::Text(label.c_str());
+	ImGui::NextColumn();
+
+	if (ImGui::Checkbox(("###" + label).c_str(), &value))
+	{
+		updated = true;
+	}
+
+	ImGui::Columns(1);
+
+	ImGui::PopID();
+
+	return updated;
+}

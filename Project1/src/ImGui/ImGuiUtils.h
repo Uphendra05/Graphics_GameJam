@@ -7,3 +7,4 @@
 
 
 extern void DrawTransformVector3ImGui(std::string label, glm::vec3& values, float resetValue, float& columnWidth);
+extern bool DrawBool(std::string label, bool& value);

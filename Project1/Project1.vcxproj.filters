@@ -222,6 +222,15 @@
     <ClCompile Include="src\Particle System\PartcileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Particle System\BaseEmitterShape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Particle System\ConeEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\LookAt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -449,10 +458,19 @@
     <ClInclude Include="src\SkinnedMeshRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Particle System\iEmmitterShape.h">
+    <ClInclude Include="src\Particle System\BaseEmitterShape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Particle System\PartcileSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle System\ConeEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Lerp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\LookAt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

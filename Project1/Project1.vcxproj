@@ -141,10 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\glad\src\glad.c" />
+    <ClCompile Include="src\Particle System\ConeEmitter.cpp" />
     <ClCompile Include="Extern\imGui\ImCurveEdit.cpp" />
     <ClCompile Include="Extern\imGui\ImGradient.cpp" />
     <ClCompile Include="Extern\imGui\ImGuizmo.cpp" />
     <ClCompile Include="Extern\imGui\ImSequencer.cpp" />
+    <ClCompile Include="src\Particle System\BaseEmitterShape.cpp" />
     <ClCompile Include="src\Particle System\PartcileSystem.cpp" />
     <ClCompile Include="src\Animation\Animation.cpp" />
     <ClCompile Include="src\Animation\AnimationSequence.cpp" />
@@ -202,6 +204,7 @@
     <ClCompile Include="src\SkyboxMaterial.cpp" />
     <ClCompile Include="src\Textures.cpp" />
     <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\Utilities\LookAt.cpp" />
     <ClCompile Include="src\VertexArray.cpp" />
     <ClCompile Include="src\VertexBuffer.cpp" />
     <ClCompile Include="src\Time.cpp" />
@@ -211,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\stb_image.h" />
+    <ClInclude Include="src\Particle System\ConeEmitter.h" />
     <ClInclude Include="Extern\imGui\ImCurveEdit.h" />
     <ClInclude Include="Extern\imGui\ImGradient.h" />
     <ClInclude Include="Extern\imGui\ImGuizmo.h" />
@@ -224,7 +228,7 @@
     <ClInclude Include="src\Animation\Keyframe.h" />
     <ClInclude Include="src\CharacterAnimation\CharacterAnimation.h" />
     <ClInclude Include="src\Math.h" />
-    <ClInclude Include="src\Particle System\iEmmitterShape.h" />
+    <ClInclude Include="src\Particle System\BaseEmitterShape.h" />
     <ClInclude Include="src\PostProcessing\SinglePassEffect.h" />
     <ClInclude Include="src\PostProcessing\PixelizationEffect.h" />
     <ClInclude Include="src\Quad.h" />
@@ -279,6 +283,8 @@
     <ClInclude Include="src\Textures.h" />
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\Triangle.h" />
+    <ClInclude Include="src\Utilities\Lerp.h" />
+    <ClInclude Include="src\Utilities\LookAt.h" />
     <ClInclude Include="src\Vertex.h" />
     <ClInclude Include="src\VertexArray.h" />
     <ClInclude Include="src\VertexBuffer.h" />

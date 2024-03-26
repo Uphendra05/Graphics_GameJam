@@ -14,7 +14,7 @@ struct Particle
 {
 	glm::vec3 position = glm::vec3(0.0f);
 	glm::vec3 velocity = glm::vec3(0.0f);
-	glm::vec3 acceleration = glm::vec3(0.0f, 4.0f, 0.0f);
+	glm::vec3 acceleration = glm::vec3(4.0f, 0.0f, 0.0f);
 	float lifetime = 0.0f;
 };
 

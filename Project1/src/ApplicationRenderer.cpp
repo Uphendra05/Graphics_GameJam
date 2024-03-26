@@ -234,7 +234,9 @@ void ApplicationRenderer::Start()
     // GraphicsRender::GetInstance().AddModelAndShader(xBot, animationShader);
 
      CharacterAnimation* character = new CharacterAnimation();
-     PartcileSystem* particleSystwm = new PartcileSystem(Shapes::CONE);
+
+     Model* sphereParticle = new Model("Models/DefaultSphere/DefaultSphere.fbx");
+     PartcileSystem* particleSystwm = new PartcileSystem(Shapes::CONE, sphereParticle);
 
 }
 

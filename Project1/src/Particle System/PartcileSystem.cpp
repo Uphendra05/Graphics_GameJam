@@ -23,10 +23,11 @@ PartcileSystem::PartcileSystem(Shapes emitShape, Model* desiredModel)
 {
 
 	defaultModel = new Model(*desiredModel);
-	GraphicsRender::GetInstance().AddModelAndShader(defaultModel, GraphicsRender::GetInstance().defaultShader);
+	//GraphicsRender::GetInstance().AddModelAndShader(defaultModel, GraphicsRender::GetInstance().defaultShader);
 	this->emmitterShape = emitShape;
 	DefaultEmitterValues();
 	InitializeParticles();
+	InitializeEntity(this);
 }
 
 PartcileSystem::~PartcileSystem()
@@ -65,7 +66,6 @@ void PartcileSystem::Start()
 
 void PartcileSystem::Update(float deltaTime)
 {
-	std::cout << "Inside Update" << std::endl;
 	switch (emmitterShape)
 	{
 	case Shapes::CONE:
@@ -117,6 +117,7 @@ void PartcileSystem::SetupConeEmmitter()
 		Particle newParticle;
 		Model* tempModel = new Model(*defaultModel);
 		GraphicsRender::GetInstance().AddModelAndShader(tempModel, GraphicsRender::GetInstance().defaultShader);
+		tempModel->isVisible = false;
 		this->m_ParticleModels.push_back(tempModel);
 		this->m_Particles.push_back(newParticle);
 	}
@@ -145,6 +146,8 @@ void PartcileSystem::UpdateConeEmmitter(float deltaTime)
 		{
 			curParticle.lifetime = this->m_getRandFloat(this->coneEmmitterInfo->minLifetime,
 				this->coneEmmitterInfo->maxLifetime);
+
+			std::cout << "Current Liftime : " << curParticle.lifetime << std::endl;
 
 			curParticle.position = this->coneEmmitterInfo->emitterPosition;
 			curParticle.position += this->m_getRandVec3Float(this->coneEmmitterInfo->positionOffsetMin,
@@ -184,6 +187,7 @@ void PartcileSystem::RenderConeEmmitterParticles()
 		{
 
 			m_ParticleModels[i]->transform.position = curParticle.position;
+			m_ParticleModels[i]->isVisible = true;
 			i++;
 			            
 		}
@@ -198,8 +202,8 @@ void PartcileSystem::DefaultEmitterValues()
 	coneEmmitterInfo = new ConeEmmitterInfo();
 	coneEmmitterInfo->emitterPosition = glm::vec3(0.0f, 0.0f, 0.0f);
 	
-	coneEmmitterInfo->initVelocityMin = glm::vec3(-3.0f, 10.0f, -3.0f);
-	coneEmmitterInfo->initVelocityMax = glm::vec3(3.0f, 15.0f, 3.0f);
+	coneEmmitterInfo->initVelocityMin = glm::vec3(-3.0f, 0.0f, -3.0f);
+	coneEmmitterInfo->initVelocityMax = glm::vec3(3.0f, 0.0f, 3.0f);
 
 	
 	coneEmmitterInfo->orientationChangeMinRadians = glm::vec3(0.0f, 0.0f, -0.1f);
@@ -208,12 +212,11 @@ void PartcileSystem::DefaultEmitterValues()
 	coneEmmitterInfo->uniformScaleChangeMin = 0.001f;
 	coneEmmitterInfo->uniformScaleChangeMax = 0.003f;
 
-	coneEmmitterInfo->constantForce = glm::vec3(0.0f, -4.0f, 0.0f);
-	coneEmmitterInfo->minLifetime = 10.0f;
-	coneEmmitterInfo->maxLifetime = 15.0f;
-	coneEmmitterInfo->minNumParticlesPerUpdate = 1;
-	coneEmmitterInfo->maxNumParticlesPerUpdate = 3;
-	coneEmmitterInfo->maxParticless = 200;
+	coneEmmitterInfo->constantForce = glm::vec3(-4.0f, 0.0f, 0.0f);
+	coneEmmitterInfo->minLifetime = 1.0f;
+	coneEmmitterInfo->maxLifetime = 5.0f;
+
+	coneEmmitterInfo->maxParticless = 100;
 	
 
 }
