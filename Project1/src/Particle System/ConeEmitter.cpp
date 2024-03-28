@@ -93,7 +93,7 @@ void ConeEmitter::Render(glm::vec3& pos)
 	topRadius = GetRadius(height);
 
 	GraphicsRender::GetInstance().DrawSphere(center, radius, bottomColor);
-	GraphicsRender::GetInstance().DrawSphere(end + pos, topRadius, bottomColor);
+	GraphicsRender::GetInstance().DrawSphere(end + pos, topRadius, topColor);
 }
 
 float ConeEmitter::GetRadius(float& heightValue)

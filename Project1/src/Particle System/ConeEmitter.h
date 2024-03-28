@@ -42,11 +42,11 @@ private :
 	float angle = 25.0f;
 	float radius = 1.0f;
 	float height = 1.0f;
+	float topRadius = 0;
 
 
 	const char* emitStrings[2] = { "Base", "Volume" };
 
-	float topRadius = 0;
 
 	int currentEmitInt = 0;
 	float GetRadius(float& heightValue);
