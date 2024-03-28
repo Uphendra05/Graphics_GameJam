@@ -29,6 +29,7 @@
 #include "SkinnedMeshRenderer.h"
 #include "CharacterAnimation/CharacterAnimation.h"
 #include "Particle System/PartcileSystem.h"
+#include "Particle System/ConeEmitter.h"
 
 class ApplicationRenderer
 {

@@ -1,12 +1,14 @@
 #include "ConeEmitter.h"
 #include <glm/gtx/euler_angles.hpp>
 #include <glm/glm.hpp>
-#include <glm/gtc/random.hpp>
-#include "../Random.h"
-#include "../Utilities/Lerp.h"
 #include <glm/gtx/vector_angle.hpp>
 #include <glm/gtx/rotate_vector.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
+#include "../Random.h"
+#include "../Utilities/Lerp.h"
+#include "../ImGui/ImGuiUtils.h"
+
+#include "../GraphicsRender.h"
 
 ConeEmitter::ConeEmitter()
 {
@@ -27,6 +29,18 @@ EmmitFrom ConeEmitter::GetEmifrom()
 
 void ConeEmitter::DrawProperties()
 {
+
+	DrawFloat("Angle", angle);
+	DrawFloat("Radius", radius);
+	DrawFloat("Height", height);
+
+
+	if (DrawDropDown("EmitFrom", currentEmitInt, emitStrings, 2))
+	{
+		SetEmitFrom((EmmitFrom)currentEmitInt);
+	}
+
+	BaseEmitterShape::DrawProperties();
 }
 
 void ConeEmitter::SceneDraw()
@@ -37,7 +51,6 @@ void ConeEmitter::GetParticlePosAndDir(glm::vec3& pos, glm::vec3& dir)
 {
 	float randomHeight = 0;
 
-	//Calculate Up based on rotation 
 	glm::vec3 eulerAnglesRadians = glm::radians(rotation);
 	glm::quat quatRot = glm::quat(
 		glm::eulerAngleYXZ(eulerAnglesRadians.y, eulerAnglesRadians.x, eulerAnglesRadians.z));
@@ -64,10 +77,23 @@ void ConeEmitter::GetParticlePosAndDir(glm::vec3& pos, glm::vec3& dir)
 	pos = pos + dirInCone * (GetRandomFloatNumber(0, radius));
 	dir = GetDirection(up, dirInCone);
 
+	if (isRandomDir)
+	{
+		//TODO randomize direction
+	}
+
 }
 
 void ConeEmitter::Render(glm::vec3& pos)
 {
+
+	glm::vec3 center = pos + position;
+	glm::vec3 end = pos + endPos;
+
+	topRadius = GetRadius(height);
+
+	GraphicsRender::GetInstance().DrawSphere(center, radius, bottomColor);
+	GraphicsRender::GetInstance().DrawSphere(end + pos, topRadius, bottomColor);
 }
 
 float ConeEmitter::GetRadius(float& heightValue)

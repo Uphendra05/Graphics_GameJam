@@ -70,9 +70,75 @@ void DrawTransformVector3ImGui(std::string label, glm::vec3& values, float reset
 	ImGui::PopID();
 }
 
-bool DrawBool(std::string label, bool& value)
+bool DrawDropDown(std::string label, int& currentItem, const char* const* items, int size)
 {
-	bool updated = false;
+	bool initiated = false;
+
+	ImGui::PushID(label.c_str());
+
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 150);
+	ImGui::Text(label.c_str());
+	ImGui::NextColumn();
+
+	if (ImGui::Combo(("###" + label).c_str(), &currentItem, items, size))
+	{
+		initiated = true;
+	}
+
+	ImGui::Columns(1);
+	ImGui::PopID();
+
+	
+	return initiated;
+
+}
+
+bool DrawDragFloat(std::string label, float& value, float speed, float min, float max)
+{
+	bool initiated = false;
+
+	ImGui::PushID(label.c_str());
+
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 150);
+	ImGui::Text(label.c_str());
+	ImGui::NextColumn();
+
+	if (ImGui::DragFloat(("###" + label).c_str(), &value, speed, min, max, "%.2f"))
+	{
+		initiated = true;
+	}
+
+	ImGui::Columns(1);
+
+	ImGui::PopID();
+
+	return initiated;
+}
+
+void DrawFloat(std::string label, float& value)
+{
+
+	ImGui::PushID(label.c_str());
+
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 150);
+	ImGui::Text(label.c_str());
+	ImGui::NextColumn();
+
+	if (ImGui::InputFloat(("###" + label).c_str(), &value, 0, 0, "%.2f"))
+	{
+	}
+
+	ImGui::Columns(1);
+
+	ImGui::PopID();
+
+}
+
+void DrawBool(std::string label, bool& value)
+{
 
 	ImGui::PushID(label.c_str());
 
@@ -83,12 +149,10 @@ bool DrawBool(std::string label, bool& value)
 
 	if (ImGui::Checkbox(("###" + label).c_str(), &value))
 	{
-		updated = true;
 	}
 
 	ImGui::Columns(1);
 
 	ImGui::PopID();
 
-	return updated;
 }

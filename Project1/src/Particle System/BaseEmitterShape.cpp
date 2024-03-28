@@ -7,5 +7,5 @@ void BaseEmitterShape::DrawProperties()
 	DrawTransformVector3ImGui("Rotation", rotation, 0, particleWidth);
 	DrawTransformVector3ImGui("Scale", scale, 0, particleWidth);
 
-	DrawBool("RandomDir", isRandom);
+	DrawBool("Randomize Direction", isRandomDir);
 }

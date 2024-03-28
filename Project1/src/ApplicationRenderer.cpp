@@ -235,8 +235,8 @@ void ApplicationRenderer::Start()
 
      CharacterAnimation* character = new CharacterAnimation();
 
-     Model* sphereParticle = new Model("Models/DefaultSphere/DefaultSphere.fbx");
-     PartcileSystem* particleSystwm = new PartcileSystem(Shapes::CONE, sphereParticle);
+     //Model* sphereParticle = new Model("Models/DefaultSphere/DefaultSphere.fbx");
+     //PartcileSystem* particleSystwm = new PartcileSystem(Shapes::CONE, sphereParticle);
 
 }
 

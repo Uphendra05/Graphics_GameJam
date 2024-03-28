@@ -5,7 +5,6 @@ class BaseEmitterShape : public Object
 {
 public:
 
-	virtual ~BaseEmitterShape() = 0;
 	glm::vec3 position = glm::vec3(0);
 	glm::vec3 rotation = glm::vec3(0);
 	glm::vec3 scale = glm::vec3(0);
@@ -18,6 +17,6 @@ public:
 	virtual void Render(glm::vec3& pos) = 0;
 
 	float particleWidth;
-	bool isRandom;
+	bool isRandomDir;
 
 };

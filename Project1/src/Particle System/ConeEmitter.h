@@ -3,6 +3,7 @@
 
 enum class EmmitFrom
 {
+	// Unity enums for spawning from base meaning from down sphere and volume meaning from volume between two sphere 
 	BASE = 0,
 	VOLUME = 1
 };
@@ -13,10 +14,6 @@ class ConeEmitter : public BaseEmitterShape
 public:
 
 	ConeEmitter();
-
-	float angle = 2;
-	float radius = 1;
-	float height = 1;
 
 	glm::vec3 endPos = glm::vec3(0);
 
@@ -39,6 +36,14 @@ public:
 
 private :
 
+	//Unity Particle System Variables, default value 1, adjust radius for size of the two spheres
+	//adjust angle for wider and shorter spawning 
+	//adjust height for cone height
+	float angle = 25.0f;
+	float radius = 1.0f;
+	float height = 1.0f;
+
+
 	const char* emitStrings[2] = { "Base", "Volume" };
 
 	float topRadius = 0;
@@ -49,6 +54,7 @@ private :
 	glm::vec3 CircularRandVec3();
 	glm::vec3 GetRandomDirInsideCone( glm::vec3& up);
 
-	
+	glm::vec4 bottomColor = glm::vec4(0, 1, 0, 1);
+	glm::vec4 topColor = glm::vec4(0, 0, 1, 1);
 };
 

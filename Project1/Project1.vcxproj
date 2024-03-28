@@ -141,6 +141,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\glad\src\glad.c" />
+    <ClCompile Include="src\Particle System\SphereEmitter.cpp" />
+    <ClCompile Include="src\Particle System\BoxEmitter.cpp" />
     <ClCompile Include="src\Particle System\ConeEmitter.cpp" />
     <ClCompile Include="Extern\imGui\ImCurveEdit.cpp" />
     <ClCompile Include="Extern\imGui\ImGradient.cpp" />
@@ -214,6 +216,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\stb_image.h" />
+    <ClInclude Include="src\Particle System\SphereEmitter.h" />
+    <ClInclude Include="src\Particle System\BoxEmitter.h" />
     <ClInclude Include="src\Particle System\ConeEmitter.h" />
     <ClInclude Include="Extern\imGui\ImCurveEdit.h" />
     <ClInclude Include="Extern\imGui\ImGradient.h" />
