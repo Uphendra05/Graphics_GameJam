@@ -12,7 +12,7 @@ EmitterShapeManager::EmitterShapeManager()
 	AddShape(EmitterShape::BOX, new BoxEmitter());
 	AddShape(EmitterShape::SPHERE, new SphereEmitter());
 
-	SetShape(EmitterShape::CONE);
+	SetShape(EmitterShape::BOX);
 }
 
 EmitterShapeManager::~EmitterShapeManager()

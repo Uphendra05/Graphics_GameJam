@@ -26,7 +26,7 @@ public:
 	void RenderParticles();
 	void InitializeParticles();
 
-	int maxParticles = 10;
+	int maxParticles = 1000;
 
 
 	float duration = 5;

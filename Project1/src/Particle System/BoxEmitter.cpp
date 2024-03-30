@@ -12,9 +12,10 @@ BoxEmitter::BoxEmitter()
 
 void BoxEmitter::DrawProperties()
 {
-	DrawTransformVector3ImGui("Position", emitterPos, 0, columnWidth);
-	DrawTransformVector3ImGui("Direction", particleDir, 0, columnWidth);
-	DrawTransformVector3ImGui("Size", boxScale, 0, columnWidth);
+   
+	DrawTransformVector3ImGui("Emitter Position ", emitterPos, 0, columnWidth);
+	DrawTransformVector3ImGui("Emitter Direction ", particleDir, 0, columnWidth);
+	DrawTransformVector3ImGui("Emitter Scale ", boxScale, 1, columnWidth);
 
 }
 
@@ -41,17 +42,14 @@ void BoxEmitter::Render(glm::vec3& pos)
 
 glm::vec3 BoxEmitter::FindPointInsideBox(glm::vec3 center, glm::vec3 scale)
 {
-    // Calculate half scale for each dimension
-    glm::vec3 halfScale = scale / 2.0f;
-
     // Initialize random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
 
     // Generate random coordinates within the range [-halfScale, halfScale] for each dimension
-    std::uniform_real_distribution<float> distX(-halfScale.x, halfScale.x);
-    std::uniform_real_distribution<float> distY(-halfScale.y, halfScale.y);
-    std::uniform_real_distribution<float> distZ(-halfScale.z, halfScale.z);
+    std::uniform_real_distribution<float> distX(-scale.x, scale.x);
+    std::uniform_real_distribution<float> distY(-scale.y, scale.y);
+    std::uniform_real_distribution<float> distZ(-scale.z, scale.z);
 
     float x = distX(gen);
     float y = distY(gen);

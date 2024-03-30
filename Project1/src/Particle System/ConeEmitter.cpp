@@ -32,7 +32,6 @@ void ConeEmitter::DrawProperties()
 
 	DrawFloatImGui("Angle", angle);
 	DrawFloatImGui("Radius", radius);
-	DrawFloatImGui("Height", height);
 
 
 	if (DrawDropDownImGui("EmitFrom", currentEmitInt, emitStrings, 2))
@@ -92,8 +91,8 @@ void ConeEmitter::Render(glm::vec3& pos)
 
 	topRadius = GetRadius(height);
 
-	GraphicsRender::GetInstance().DrawSphere(center, radius, bottomColor);
-	GraphicsRender::GetInstance().DrawSphere(end + pos, topRadius, topColor);
+	GraphicsRender::GetInstance().DrawSphere(center, radius, bottomColor, true);
+	GraphicsRender::GetInstance().DrawSphere(end + pos, topRadius, topColor, true);
 }
 
 float ConeEmitter::GetRadius(float& heightValue)

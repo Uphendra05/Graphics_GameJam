@@ -8,12 +8,12 @@
 ParticleSystem::ParticleSystem()
 {
 
-	LoadModel("Models/DefaultQuad/DefaultQuad.fbx", true);
+	//LoadModel("Models/DefaultQuad/DefaultQuad.fbx");
 	name = "Particle System";
 
 	//GraphicsRender::GetInstance().AddModelAndShader(this, GraphicsRender::GetInstance().solidColorShader);
 	ParticleSystemManager::GetInstance().AddParticleSystem(this);
-	
+	InitializeEntity(this);
 	
 
 }
@@ -89,7 +89,7 @@ void ParticleSystem::DrawProperties()
 
 void ParticleSystem::ParticleSystemProperties()
 {
-	if (!ImGui::TreeNodeEx("System"))
+	if (!ImGui::TreeNodeEx("System Properties"))
 	{
 		return;
 	}
