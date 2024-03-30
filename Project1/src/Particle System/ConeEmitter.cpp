@@ -30,12 +30,12 @@ EmmitFrom ConeEmitter::GetEmifrom()
 void ConeEmitter::DrawProperties()
 {
 
-	DrawFloat("Angle", angle);
-	DrawFloat("Radius", radius);
-	DrawFloat("Height", height);
+	DrawFloatImGui("Angle", angle);
+	DrawFloatImGui("Radius", radius);
+	DrawFloatImGui("Height", height);
 
 
-	if (DrawDropDown("EmitFrom", currentEmitInt, emitStrings, 2))
+	if (DrawDropDownImGui("EmitFrom", currentEmitInt, emitStrings, 2))
 	{
 		SetEmitFrom((EmmitFrom)currentEmitInt);
 	}

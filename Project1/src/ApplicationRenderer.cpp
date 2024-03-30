@@ -234,9 +234,10 @@ void ApplicationRenderer::Start()
     // GraphicsRender::GetInstance().AddModelAndShader(xBot, animationShader);
 
      CharacterAnimation* character = new CharacterAnimation();
-
-     //Model* sphereParticle = new Model("Models/DefaultSphere/DefaultSphere.fbx");
-     //PartcileSystem* particleSystwm = new PartcileSystem(Shapes::CONE, sphereParticle);
+     ParticleSystem* systemPart = new ParticleSystem();
+     systemPart->InitializeParticles();
+    
+    
 
 }
 
@@ -404,6 +405,8 @@ void ApplicationRenderer::EngineGameLoop()
     if (isPlayMode)
     {
         EntityManager::GetInstance().Update(Time::GetInstance().deltaTime);
+        ParticleSystemManager::GetInstance().Update(Time::GetInstance().deltaTime);
+
     }
 
     PostRender();
@@ -483,7 +486,7 @@ void ApplicationRenderer::RenderForCamera(Camera* camera, FrameBuffer* framebuff
        ScrollShader->setMat4("ProjectionMatrix", _projection);*/
 
     GraphicsRender::GetInstance().Draw();
-
+    ParticleSystemManager::GetInstance().Render();
     framebuffer->Unbind();
 
     if (camera->isPostprocessing)

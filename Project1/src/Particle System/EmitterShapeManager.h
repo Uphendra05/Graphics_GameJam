@@ -47,7 +47,7 @@ public:
 
 private :
 
-	const char* shapeString[3] = { "Sphere", "Cone", "Box" };
+	const char* shapeString[3] = { "BOX", "CONE", "SPHERE" };
 	std::unordered_map< EmitterShape, BaseEmitterShape*> m_ListOfShapes;
 
 	int m_CurrentEmitterShape = 0;

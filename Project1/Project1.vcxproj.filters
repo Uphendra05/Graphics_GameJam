@@ -219,9 +219,6 @@
     <ClCompile Include="src\SkinnedMeshRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Particle System\PartcileSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Particle System\BaseEmitterShape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -235,6 +232,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Particle System\SphereEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Particle System\EmitterShapeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Particle System\ParticleEmission.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Particle System\ParticleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Particle System\ParticleSystemManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -467,9 +476,6 @@
     <ClInclude Include="src\Particle System\BaseEmitterShape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Particle System\PartcileSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Particle System\ConeEmitter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -483,6 +489,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Particle System\SphereEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle System\EmitterShapeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle System\EmitterProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle System\ParticleEmission.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle System\ParticleSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle System\ParticleSystemManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

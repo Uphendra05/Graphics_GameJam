@@ -11,6 +11,8 @@ EmitterShapeManager::EmitterShapeManager()
 	AddShape(EmitterShape::CONE, new ConeEmitter());
 	AddShape(EmitterShape::BOX, new BoxEmitter());
 	AddShape(EmitterShape::SPHERE, new SphereEmitter());
+
+	SetShape(EmitterShape::CONE);
 }
 
 EmitterShapeManager::~EmitterShapeManager()
@@ -22,7 +24,7 @@ EmitterShapeManager::~EmitterShapeManager()
 void EmitterShapeManager::SetShape(EmitterShape shape)
 {
 	this->m_EmitterShape = shape;
-	m_CurrentEmitterShape = (int)shape;
+	m_CurrentEmitterShape = (int)m_EmitterShape;
 }
 
 EmitterShape EmitterShapeManager::GetShape()
@@ -77,7 +79,7 @@ SphereEmitter* EmitterShapeManager::AsSphereEmitter()
 
 void EmitterShapeManager::DrawProperties()
 {
-	if (DrawDropDown("Shape", m_CurrentEmitterShape, shapeString, 3))
+	if (DrawDropDownImGui("Shape", m_CurrentEmitterShape, shapeString, 3))
 	{
 		SetShape((EmitterShape)m_CurrentEmitterShape);
 	}

@@ -14,8 +14,8 @@ SphereEmitter::SphereEmitter()
 void SphereEmitter::DrawProperties()
 {
 
-	DrawFloat("Radius", radius);
-	DrawDragFloat("Radius Thickness", radiusThickness, 0.01f, 0, 1);
+	DrawFloatImGui("Radius", radius);
+	DrawDragFloatImGui("Radius Thickness", radiusThickness, 0.01f, 0, 1);
 	BaseEmitterShape::DrawProperties();
 }
 
@@ -45,13 +45,13 @@ void SphereEmitter::Render(glm::vec3& pos)
 
 	if (radiusThickness == 0)
 	{
-		GraphicsRender::GetInstance().DrawSphere(center, radius - (radius * radiusThickness), radiusThicknessCol);
+		GraphicsRender::GetInstance().DrawSphere(center, radius - (radius * radiusThickness), radiusThicknessCol,true);
 		return;
 	}
 	else
 	{
-		GraphicsRender::GetInstance().DrawSphere(center, radius, sphereRadiusCol);
-		GraphicsRender::GetInstance().DrawSphere(center, radius - (radius * radiusThickness), radiusThicknessCol);
+		GraphicsRender::GetInstance().DrawSphere(center, radius, sphereRadiusCol, true);
+		GraphicsRender::GetInstance().DrawSphere(center, radius - (radius * radiusThickness), radiusThicknessCol, true);
 	}
 }
 
@@ -61,7 +61,7 @@ glm::vec3 SphereEmitter::GetRandomPointInSphere(glm::vec3 minDir, glm::vec3 maxD
 	std::mt19937 gen(rd());
 	std::uniform_real_distribution<float> dist(0.0f, 1.0f);
 
-	// Generate random angles
+	// Generate random angles	
 	float theta = glm::mix(minDir.x, maxDir.x, dist(gen)) * glm::pi<float>();  // [minDir.x, maxDir.x] mapped to [0, π]
 	float phi = glm::mix(minDir.y, maxDir.y, dist(gen)) * glm::pi<float>();    // [minDir.y, maxDir.y] mapped to [0, π]
 

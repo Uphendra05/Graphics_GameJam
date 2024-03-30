@@ -141,6 +141,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\glad\src\glad.c" />
+    <ClCompile Include="src\Particle System\ParticleSystemManager.cpp" />
+    <ClCompile Include="src\Particle System\ParticleSystem.cpp" />
+    <ClCompile Include="src\Particle System\ParticleEmission.cpp" />
+    <ClCompile Include="src\Particle System\EmitterShapeManager.cpp" />
     <ClCompile Include="src\Particle System\SphereEmitter.cpp" />
     <ClCompile Include="src\Particle System\BoxEmitter.cpp" />
     <ClCompile Include="src\Particle System\ConeEmitter.cpp" />
@@ -149,7 +153,6 @@
     <ClCompile Include="Extern\imGui\ImGuizmo.cpp" />
     <ClCompile Include="Extern\imGui\ImSequencer.cpp" />
     <ClCompile Include="src\Particle System\BaseEmitterShape.cpp" />
-    <ClCompile Include="src\Particle System\PartcileSystem.cpp" />
     <ClCompile Include="src\Animation\Animation.cpp" />
     <ClCompile Include="src\Animation\AnimationSequence.cpp" />
     <ClCompile Include="src\Animation\AnimationSystem.cpp" />
@@ -216,6 +219,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\stb_image.h" />
+    <ClInclude Include="src\Particle System\ParticleSystemManager.h" />
+    <ClInclude Include="src\Particle System\ParticleSystem.h" />
+    <ClInclude Include="src\Particle System\ParticleEmission.h" />
+    <ClInclude Include="src\Particle System\EmitterProperty.h" />
+    <ClInclude Include="src\Particle System\EmitterShapeManager.h" />
     <ClInclude Include="src\Particle System\SphereEmitter.h" />
     <ClInclude Include="src\Particle System\BoxEmitter.h" />
     <ClInclude Include="src\Particle System\ConeEmitter.h" />
@@ -224,7 +232,6 @@
     <ClInclude Include="Extern\imGui\ImGuizmo.h" />
     <ClInclude Include="Extern\imGui\ImSequencer.h" />
     <ClInclude Include="Extern\imGui\ImZoomSlider.h" />
-    <ClInclude Include="src\Particle System\PartcileSystem.h" />
     <ClInclude Include="src\Animation\Animation.h" />
     <ClInclude Include="src\Animation\AnimationSequence.h" />
     <ClInclude Include="src\Animation\AnimationSystem.h" />
